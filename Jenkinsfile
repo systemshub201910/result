@@ -12,7 +12,7 @@ pipeline {
     
         stage ('Building Vote APP') {
             steps {
-               sh 'docker build -t gcr.io/k8s-dec2-test/${env.JOB_NAME} .'
+               sh 'docker build -t gcr.io/k8s-dec2-test/result-app .'
             }
         }
         
@@ -25,7 +25,7 @@ pipeline {
         
         stage ('Push Docker image to Google Container Registry') {
             steps {
-                sh 'docker push gcr.io/k8s-dec2-test/${env.JOB_NAME}'
+                sh 'docker push gcr.io/k8s-dec2-test/result-app'
             }
         }
         
