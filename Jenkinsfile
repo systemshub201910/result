@@ -12,6 +12,7 @@ pipeline {
         stage ('Checkout SCM') {
             steps {
                 git 'https://github.com/systemshub201910/result.git'
+		sleep(time:300,unit:"SECONDS")
             }
         }
     
